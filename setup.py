@@ -1,21 +1,22 @@
 #!/usr/bin/env python
-from setuptools import setup, find_packages
+from setuptools import setup
 
 try:
-    import pypandoc
-    description = pypandoc.convert('README.md', 'rst')
-except (IOError, ImportError):
+    description = open("README.rst").read()
+except IOError:
     description = ''
 
 setup(
-    name = 'django-tooltips',
-    version = '1.1.5',
+    name='django-tooltips',
+    version='1.1.6',
     description='Django manageable Bootstrap Tooltips',
     long_description=description,
-    author = 'Sander van de Graaf',
-    author_email = 'mail@svdgraaf.nl',
-    url = 'http://github.com/svdgraaf/django-tooltips/',
-    packages = find_packages(),
+    author='Sander van de Graaf',
+    author_email='mail@svdgraaf.nl',
+    maintainer='Aaron Kennedy',
+    maintainer_email='kennedy@postpro.net',
+    url='https://github.com/akennedy90/django-tooltips',
+    packages=['tooltips', 'tooltips.migrations'],
     include_package_data=True,
     classifiers=[
         'Development Status :: 5 - Production/Stable',
